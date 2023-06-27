@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ConfigureGradient: View {
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color.blue, Color.white]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [Color.blue, Color("LightBlue")]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
     }
 }

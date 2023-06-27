@@ -25,8 +25,7 @@ struct ContentView: View {
                     Text("76°")
                         .font(.system(size: 70, weight: .medium))
                         .foregroundColor(.white)
-                }
-                Spacer()
+                }.padding(.bottom, 40)
                 HStack{
                     WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 10)
                     WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 12)
