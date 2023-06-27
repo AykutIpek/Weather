@@ -7,13 +7,17 @@
 
 import SwiftUI
 
+
 struct ContentView: View {
+    
+    @State private var isNight: Bool = false
+    
     var body: some View {
         ZStack{
-            ConfigureGradient(topColor: .blue, bottomColor: Color("LightBlue"))
+            ConfigureGradient(isNight: $isNight)
             VStack{
                 CityNameView(cityName: "Cupertino, CA")
-                MainWeatherStatusView(imageName: "cloud.sun.fill", temparatureText: 11)
+                MainWeatherStatusView(imageName: isNight ? "moon.stars.fill" : "cloud.sun.fill", temparatureText: 11)
                 HStack{
                     WeatherDayView(dayOfWeek: "TUE", imageName: "cloud.sun.fill", temperature: 10)
                     WeatherDayView(dayOfWeek: "WED", imageName: "sun.max.fill", temperature: 12)
@@ -22,7 +26,11 @@ struct ContentView: View {
                     WeatherDayView(dayOfWeek: "SAT", imageName: "snow", temperature: 0)
                 }
                 Spacer()
-                WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
+                Button {
+                    isNight.toggle()
+                } label: {
+                    WeatherButton(title: "Change Day Time", textColor: .blue, backgroundColor: .white)
+                }
                 Spacer()
             }
         }
