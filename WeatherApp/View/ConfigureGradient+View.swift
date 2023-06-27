@@ -8,8 +8,11 @@
 import SwiftUI
 
 struct ConfigureGradient: View {
+    var topColor: Color
+    var bottomColor: Color
+    
     var body: some View {
-        LinearGradient(gradient: Gradient(colors: [Color.blue, Color("LightBlue")]), startPoint: .top, endPoint: .bottom)
+        LinearGradient(gradient: Gradient(colors: [topColor, bottomColor]), startPoint: .top, endPoint: .bottom)
             .edgesIgnoringSafeArea(.all)
     }
 }
